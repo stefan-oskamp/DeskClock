@@ -48,6 +48,8 @@ This is the first version that
 ### Version 1
 I created the initial vesion in 2004 based on different Deskband sample code.
 
+## SVG version:
+![SVG Version of the clock](/images/SiemensClock.svg) 
 
 
 
