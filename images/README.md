@@ -1,0 +1,2 @@
+# images folder
+Screenshots etc.
