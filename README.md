@@ -49,7 +49,7 @@ This is the first version that
 I created the initial vesion in 2004 based on different Deskband sample code.
 
 ## SVG version:
-![SVG Version of the clock](https://www.stefan-oskamp.de/SiemensClock/SVG/fullscreen/SiemensClock.svg) 
+[SVG Version of the clock](https://www.stefan-oskamp.de/SiemensClock/SVG/fullscreen/SiemensClock.svg) 
 
 
 
