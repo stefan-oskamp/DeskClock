@@ -8,20 +8,26 @@
 Version 2.0.0 has been tested under Windows 10 64 bit. A 32 bit version could be provided if needed.
 
 ## Installation
-The binary relaese needs to be installed manually (for now):
-- Create a new folder "DeskClock" under C:\Program Files\.
-- Move the release zip file there and unpack it.
+Download and run the MSI installer from the latest release.
+
+To show the clock on the tasbar, right-click on the taskbar and expand "Toolbars >", then check the DeskClock entry.
+Note, after installation, you have to open the Toolbars menu entry twice to actually see the new entry.
+
+In case you want to manually install the application after compiling it yourself:
+- Create a new folder "DeskClock" under C:\Program Files\ or somewhere else.
+- Copy the DLL and the clockface PNG into that directory.
 - Open an elevated CMD window (press the Windows key, type cmd, right-click and select "Run as Adminstrator")
-- Navigate to the folder where you unpacked the release.
+- Navigate to the folder where the DLL is located.
 - Run "regsvr32 DeskClock.dll" (without the qoutes).
-- Right-click on the taskbar and open "Toolbars >"
-- If you see "DeskClock", activate it. If not, close the menu and retry. One retry is needed after the first insatllation.
-- You can change the size of the toolbar. (You might have to right-click on the taskbar and "unlock" it first.)
+- Display the clock in the taskbar as described above.
 
 ## Hiding the clock
 - You can simply uncheck the DeskClock in the context menu of the Windows taskbar.
 
 ## Complete uninstall
+Run the installer again to unintall the DeskClock completely.
+
+To manually uninstall:
 - Open an elevated CMD window (see above).
 - Navigate to the folder where DeskClock.dll resides.
 - Run "regsvr32 /u DeskClock.dll
@@ -39,6 +45,9 @@ The binary relaese needs to be installed manually (for now):
 - Because I have a 47 cm version of this Siemens slave clock from the Sixties at home and I like it.
 
 ## Version history
+### Version 2.0.1
+Added an MSI installer. The .wxs source file for the WiX toolset has been added to the source files.
+
 ### Version 2.0.0
 This is the first version that
 - is based on the Deskband sample coede from the MS Windows Classic Samples on GitHub,
@@ -50,10 +59,3 @@ I created the initial vesion in 2004 based on different Deskband sample code.
 
 ## SVG version:
 [SVG Version of the clock](https://www.stefan-oskamp.de/SiemensClock/SVG/fullscreen/SiemensClock.svg) 
-
-
-
-
-
-
-
