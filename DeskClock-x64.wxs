@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product Name='DeskClock 2.0.0' Id='45563D92-9D6B-4cf8-9ECE-94AA863D8555' UpgradeCode='45563D92-9D6B-4cf8-9ECE-94AA863D8555'
+    Language='1033' Codepage='1252' Version='2.0.0' Manufacturer='Stefan Oskamp'>
+
+    <Package Id='*' Keywords='Installer'
+      Description="Analog clock for the Windows taskbar."
+      Comments='For Windows 10 x64' Manufacturer='Stefan Oskamp'
+      Platform="x64"
+      InstallerVersion='200' Languages='1033' Compressed='yes' SummaryCodepage='1252' />
+
+    <Media Id='1' Cabinet='DeskClock.cab' EmbedCab='yes' DiskPrompt="CD-ROM #1" />
+    <Property Id='DiskPrompt' Value="DeskClock 2.0.0 Installation [1]" />
+
+    <Directory Id='TARGETDIR' Name='SourceDir'>
+      <Directory Id='ProgramFiles64Folder' Name='PFiles'>
+        <Directory Id='INSTALLDIR' Name='DeskClock'>
+          <Component Id='MainDLL' Guid='45563D92-9D6B-4cf8-9ECE-94AA863D8556' Win64="yes">
+            <File Id='DeskClockDLL' Name='DeskClock.dll' DiskId='1' Source='x64/Release/DeskClock.dll' KeyPath='yes'>
+            </File>
+          </Component>
+          <Component Id="RegistryEntries" Guid="45563D92-9D6B-4cf8-9ECE-94AA863D8555"  Win64="yes">
+              <RegistryKey  Root="HKCR" Key="CLSID\{45563D92-9D6B-4cf8-9ECE-94AA863D8555}">
+                <RegistryValue Type="string" Value="DeskCloc&amp;k"/>
+              </RegistryKey>
+              <RegistryKey  Root="HKCR" Key="CLSID\{45563D92-9D6B-4cf8-9ECE-94AA863D8555}\Implemented Categories\{00021492-0000-0000-C000-000000000046}" 
+                ForceCreateOnInstall="yes" ForceDeleteOnUninstall="yes">
+              </RegistryKey>
+              <RegistryKey  Root="HKCR" Key="CLSID\{45563D92-9D6B-4cf8-9ECE-94AA863D8555}\InprocServer32">
+                <RegistryValue Type="string" Value="[#DeskClockDLL]"/>
+                <RegistryValue Type="string" Name="ThreadingModel" Value="Apartment"/>
+              </RegistryKey>
+          </Component>
+
+
+          <Component Id='ClockFace' Guid='45563D92-9D6B-4cf8-9ECE-94AA863D8557' Win64="yes">
+           <File Id='SiemensClockPNG' Name='SiemensClock-1024x1024.png' DiskId='1' Source='SiemensClock-1024x1024.png' KeyPath='yes' />
+          </Component>
+         </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id='Complete' Title='Foobar 1.0' Description='The taskbar clock executable.'
+      Level='1' ConfigurableDirectory='INSTALLDIR'>
+      <ComponentRef Id='MainDLL' />
+      <ComponentRef Id='ClockFace' />
+      <ComponentRef Id="RegistryEntries" />      
+    </Feature>
+
+    <Icon Id="DeskClockICO" SourceFile="DeskClock.ico" />
+    <Property Id="ARPPRODUCTICON" Value="DeskClockICO" />
+  </Product>
+</Wix>
