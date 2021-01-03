@@ -384,7 +384,7 @@
   <g filter="url(#dropShadowFilter)" >
     <g transform="translate(512,512) scale(1.4)">
 
-      <path id="hours" fill="#202020"
+      <path id="hours" fill="#202020" transform="rotate(55)"
         d="
         M0,-170
         L-25,-130
@@ -405,7 +405,7 @@
         "
       />
 
-      <path id="minutes" fill="#202020"
+      <path id="minutes" fill="#202020" transform="rotate(303)"
         d="
         M0,-250
         L-15,-120
@@ -424,7 +424,7 @@
         "
       />
 
-      <g id="seconds">
+      <g id="seconds" transform="rotate(180)">
         <circle cx="0" cy="0" r="7" fill="red"/>
         <line x1="0" y1="0" x2="0" y2="-247" stroke-width="1.6" stroke="red"/>
       </g>
