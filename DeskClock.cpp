@@ -484,6 +484,7 @@ LRESULT CALLBACK CDeskClock::WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM
 void CDeskClock::DrawBackground(HDC dc, RECT rc)
 {
     Graphics graphics(dc);
+    graphics.SetInterpolationMode(InterpolationModeHighQualityBicubic);
     graphics.SetSmoothingMode(SmoothingModeHighQuality);
 
     unsigned int width = RECTWIDTH(rc);
