@@ -10,6 +10,8 @@ Version 2.0.0 has been tested under Windows 10 64 bit. It won't run under Window
 ### No Windows 11 Support!
 Microsoft has removed toolbars on the taskbar in Windows 11. So you will not be able to use this clock in Windows 11. But you could provide feedback to them. Maybe they change their mind.
 
+If you want to upgrade from Windows 10 to 11, remember to uninstall the DeskClock first. If you upgraded and didn't uninstall it first, your Desktop will not appear in Windows 11, because Explorer still loads the DLL but then hangs (Great work MS!). Your best option is to start the task manager, open a command line window and rename or move the DLL manually so that it cannot be loaded, then reboot and properly uninstall the DeskClock afterwards.
+
 If you want to switch to Linux instead, I can recommend Cairo Clock. I have contributed a Siemens daughter clock theme for it.
 
 ## Installation
